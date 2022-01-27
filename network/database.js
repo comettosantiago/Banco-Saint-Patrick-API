@@ -1,7 +1,8 @@
 const Sequelize = require("sequelize");
+const { dbName, userDb, userPassword } = require("./config");
 
 const connectDb = async () => {
-    const sequelize = new Sequelize("banco_saint_patrick", "root", false, {
+    const sequelize = new Sequelize(dbName, userDb, userPassword, {
         host: "localhost",
         dialect: "mysql",
     });
